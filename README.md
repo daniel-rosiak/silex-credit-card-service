@@ -1,30 +1,30 @@
 # Simple API
 
-####Requirements
+## Requirements
 
     php 5.5.9*
     php.ini: always_populate_raw_post_data = -1
 
 
-####Instalation
+## Instalation
 
     composer update
 
 
-####Running
+## Running
 
     cd /web && php -S localhost:9001
 
 
-####Run tests
+## Run tests
 
     vendor/bin/phpunit 
 
 
-####Api Routes
+## Api Routes
 
     POST ->   http://localhost:9001/api/v1/payment/credit-card
-	POST ->   http://localhost:9001/api/v1/payment/mobile
+	  POST ->   http://localhost:9001/api/v1/payment/mobile
 
 example parameters for credit-card:
 
@@ -42,14 +42,14 @@ example parameters for mobile:
     auth[timestamp]:1485099591
 
 
-####Comments
+## Comments
 
 +   Api accepts Content-Types like: application/json, application/xml and text/xml, but simple POST's with Content-Type: multipart/form-data are also accepted for test purposes
 +   Authorization is a simple key, timestamp and signature combination, for test purposes signature is made only from timestamp and key (other data is ommited) see AuthService
 +   ValidatorService returns only "true or false", but it can also return array with specific form errors
 +   routes /payment/credit-card and /payment/mobile can be merged into one (/payment), using type parameter
 
-####Author
+## Author
 
     daniel.rosiak@gmail.com
 
